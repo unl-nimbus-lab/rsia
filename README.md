@@ -5,15 +5,15 @@ Impact set generator for ROS based systems implemented in C++. Tool extracts and
 - Free software: MIT License
 
 ## Installation
-- #### Dependencies
+- Dependencies
 	- LLVM (version 3.9.0, requires to be built from source code)([link](http://llvm.org/releases/download.html#3.9.0))
 	- Clang (version 3.9.0, requires to be built from source code)([link](http://llvm.org/releases/download.html#3.9.0))
 	- Pugi-XML ([link](http://pugixml.org/))
 	- Yaml-CPP ([link](https://github.com/jbeder/yaml-cpp))
 	- graphviz ([link](http://www.graphviz.org/))
-- #### To Install Dependency Analysis (DA) tool [click here](installation/install_DA.md)
-- #### To Install Impact Analysis (IA) tool [click here](installation/install_IA.md)
-- #### To Install Helper Tools (HTs) [click here](installation/install_HTs.md)
+- To Install **Dependency Analysis (DA)** tool [click here](installation/install_DA.md)
+- To Install **Impact Analysis (IA)** tool [click here](installation/install_IA.md)
+- To Install **Helper Tools (HTs)** [click here](installation/install_HTs.md)
 
 ## Examples
 
