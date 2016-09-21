@@ -1,0 +1,21 @@
+<!--######################################
+#    sample_launch_file.launch			 #
+#                                        #
+#    @author Nishant Sharma              #
+#    @version 0.1                        #
+#    @date 20th September, 2016          #
+#######################################-->
+
+<launch>
+
+    <group ns="sample">
+
+        <node pkg="sensor" type="sensor_node" name="sensor" output="screen"\>
+        <node pkg="arm_planner" type="arm_planner_node" name="arm_planner" output="screen"\>
+        <node pkg="base_planner" type="base_planner_node" name="base_planner" output="screen"\>
+        <node pkg="arm_controller" type="arm_controller_node" name="arm_controller" output="screen"\>
+        <node pkg="base_controller" type="base_controller_node" name="base_controller" output="screen"\>
+
+    </group>
+
+</launch>
