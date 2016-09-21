@@ -16,18 +16,31 @@
 
 #include <sstream>
 
-void callback(const std_msgs::Bool::ConstPtr& msg)
+ros::Publisher base_planner_pub;
+ros::Subscriber base_planner_sub;
+
+void callback_subscriber(const std_msgs::Bool::ConstPtr& msg)
 {
-	//some processing 
+	//some processing
+}
+
+void callback_timer(const ros::TimerEvent&)
+{
+	std_msgs::Bool msg;
+	//some processing
+	base_planner_pub.publish(msg); 
 }
 
 int main(int argc, char **argv)
 {
-	ros::init(argc, argv, "arm_controller");
+	ros::init(argc, argv, "base_controller");
 	ros::NodeHandle n;
 	
-	//this one is just a consumer node
-	ros::Subscriber arm_controller_sub = n.subscribe("/arm_planner", 1000, callback);
+	base_planner_pub = n.advertise<std_msgs::Bool>("/base_planner",1000);
+	base_planner_sub = n.subscribe("/sensor", 1000, callback_subscriber);
+
+	//ros timer will ensure timly execution of the function callback_timer
+	ros::Timer timer1 = n.createTimer(ros::Duration(0.1), callback_timer);
 
 	//to wait for incoming messages and call the callback function as messages arrive.
 	ros::spin();

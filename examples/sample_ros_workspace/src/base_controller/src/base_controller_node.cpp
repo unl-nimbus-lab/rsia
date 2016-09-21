@@ -23,11 +23,11 @@ void callback(const std_msgs::Bool::ConstPtr& msg)
 
 int main(int argc, char **argv)
 {
-	ros::init(argc, argv, "arm_controller");
+	ros::init(argc, argv, "base_controller");
 	ros::NodeHandle n;
 	
 	//this one is just a consumer node
-	ros::Subscriber arm_controller_sub = n.subscribe("/arm_planner", 1000, callback);
+	ros::Subscriber base_controller_sub = n.subscribe("/base_planner", 1000, callback);
 
 	//to wait for incoming messages and call the callback function as messages arrive.
 	ros::spin();
