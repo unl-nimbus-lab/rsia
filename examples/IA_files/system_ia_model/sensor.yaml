@@ -1,0 +1,19 @@
+- type: ROSNode
+  name: sensor_n
+  label: /sample/sensor
+  color: none
+  
+#publishers  
+
+- type: ROSTopic
+  name: sensor
+  label: /sensor
+  color: none
+  
+- type: ROSEdge
+  source: sensor_n
+  destination: sensor
+  color: green
+  label: none
+  
+

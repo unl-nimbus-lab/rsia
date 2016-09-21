@@ -5,22 +5,19 @@ Impact set generator for ROS based systems implemented in C++. Tool extracts and
 - Free software: MIT License
 
 ## Installation
-- **Dependencies**
-	- **LLVM** (version 3.9.0, requires to be built from source code)([link](http://llvm.org/releases/download.html#3.9.0))
-	- **Clang** (version 3.9.0, requires to be built from source code)([link](http://llvm.org/releases/download.html#3.9.0))
-	- **Pugi-XML** ([link](http://pugixml.org/))
-	- **Yaml-CPP** ([link](https://github.com/jbeder/yaml-cpp))
-	- **graphviz** ([link](http://www.graphviz.org/))
-- To Install **_Dependency Analysis (DA)_** tool [click here](installation/install_DA.md)
-- To Install **_Impact Analysis (IA)_** tool [click here](installation/install_IA.md)
-- To Install **_Helper Tools (HTs)_** [click here](installation/install_HTs.md)
+- **Dependencies** <!-- [install script](install_dep.bash) -->
+	- **LLVM** (version 3.9.0, requires to be built from source code)[(link)](http://llvm.org/releases/download.html#3.9.0)
+	- **Clang** (version 3.9.0, requires to be built from source code)[(link)](http://llvm.org/releases/download.html#3.9.0)
+	- **Pugi-XML** [(link)](http://pugixml.org/)
+	- **Yaml-CPP** [(link)](https://github.com/jbeder/yaml-cpp)
+	- **graphviz** [(link)](http://www.graphviz.org/)
+- To Install **_Dependency Analysis (DA)_** tool [(First Pass)](DA_first_pass/README.md) [(Second Pass)](DA_second_pass/README.md)
+- To Install **_Impact Analysis (IA)_** tool [(click here)](IA_tool/README.md)
+- To Install **_Helper Tools (HTs)_** [(click here)](Helper_Tools/README.md)
 
 ## Examples
 
-You can run examples by checking out:
-
-	git clone https://github.com/unl-nimbus-lab/rsia.git 
-
+Instructions on how to use *__RSIA__* on a sample system can be found [here](examples/README.md).
 
 ## Features
 

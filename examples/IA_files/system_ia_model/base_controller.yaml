@@ -1,0 +1,17 @@
+- type: ROSNode
+  name: base_controller_n
+  label: /sample/base_controller
+  color: none
+  
+#subscribers  
+  
+- type: ROSTopic
+  name: base_planner
+  label: /base_planner
+  color: none
+  
+- type: ROSEdge
+  source: base_planner
+  destination: base_controller_n
+  color: red
+  label: none

@@ -1,0 +1,32 @@
+- type: ROSNode
+  name: base_planner_n
+  label: /sample/base_planner
+  color: none
+  
+#subscribers  
+  
+- type: ROSTopic
+  name: sensor
+  label: /sensor
+  color: none
+  
+- type: ROSEdge
+  source: sensor
+  destination: base_planner_n
+  color: red
+  label: none
+
+#publishers  
+
+- type: ROSTopic
+  name: base_planner
+  label: /base_planner
+  color: none
+  
+- type: ROSEdge
+  source: base_planner_n
+  destination: base_planner
+  color: green
+  label: none
+  
+

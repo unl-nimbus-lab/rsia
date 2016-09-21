@@ -1,7 +1,7 @@
-# DA: Dependency Analysis (Phase One)
+# DA: Dependency Analysis (First Pass)
 
 ## Dependency
-DA Phase one depends on:
+DA first pass depends on:
 - *LLVM* (ver 3.9.0, built from source) 
 - *Clang* (ver 3.9.0, built from source)
 
@@ -30,7 +30,7 @@ To check if clang is installed properly, execute `clang --version` and make sure
 
 ## Installation DA Phase One
 
-To install DA phase, you have to replace/add some files to the clang file system. 
+To install DA first pass, you have to replace/add some files to the clang file system. 
 
 The process is as follows:
 
