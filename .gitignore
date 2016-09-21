@@ -56,3 +56,10 @@ CTestTestfile.cmake
 #gedit, nano temp files
 *~
 *.save
+
+#ros workspace files
+examples/sample_ros_workspace/devel
+examples/sample_ros_workspace/build
+examples/sample_ros_workspace/.catkin_workspace
+examples/sample_ros_workspace/src/CMakeLists.txt
+
