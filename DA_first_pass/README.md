@@ -36,7 +36,7 @@ The process is as follows:
 
 * **Add** `ReachableConditions.h`, `ExprScopeAnalysis.h`, and `RosPatterns.h` to folder `<path to llvm source dir>/llvm/tools/clang/include/clang/Analysis/Analyses/`
 
-* **Add** `ReachableConditions.cpp`, `ExprScopeAnalysis.cpp`, and `RosPatterns.cpp` to folder `<path to llvm source dir>/llvm/tools/clang/lib/Analysis/ReachableConditions.cpp`
+* **Add** `ReachableConditions.cpp`, `ExprScopeAnalysis.cpp`, and `RosPatterns.cpp` to folder `<path to llvm source dir>/llvm/tools/clang/lib/Analysis/`
 
 * **Replace**
 `<path to llvm source dir>/llvm/tools/clang/include/clang/StaticAnalyzer/Checkers/Checkers.td` with `Checkers.td`
