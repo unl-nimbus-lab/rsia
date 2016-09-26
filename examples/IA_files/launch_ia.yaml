@@ -1,5 +1,5 @@
 YAMLFileList: FileList.txt
 graphOutFilename: graph.gv
 analysisOutFilename: analysis.txt
-affectedTopicFilename: AffComp.txt
+affectedCompFilename: AffComp.txt
 stoppingColorsFilename: StopColors.txt

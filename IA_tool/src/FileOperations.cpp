@@ -183,7 +183,7 @@ void ReadLaunchFile(char* filename)
 	YAMLFileList = node["YAMLFileList"].as<string>();
 	graphOutFilename = node["graphOutFilename"].as<string>();
 	analysisOutFilename = node["analysisOutFilename"].as<string>();
-	affectedTopicFilename = node["affectedTopicFilename"].as<string>();
+	affectedTopicFilename = node["affectedCompFilename"].as<string>();
 	stoppingColorsFilename = node["stoppingColorsFilename"].as<string>();
 
 	string currentLine;
