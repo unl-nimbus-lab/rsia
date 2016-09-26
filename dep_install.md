@@ -97,7 +97,7 @@ $llvm_base_dir/build_llvm/bin/clang --version
 And it should return this to verify a successful install.
 
 ```bash
-clang version 3.9.0 
+clang version 3.9.0 (tags/RELEASE_390/final)
 Target: x86_64-unknown-linux-gnu
 Thread model: posix
 InstalledDir: $llvm_base_dir/build_llvm/bin

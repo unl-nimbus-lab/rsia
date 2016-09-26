@@ -51,7 +51,7 @@ void help()
 	cout << "HELP ./phaseTwo -h" << endl;
 	cout << "USAGE: ./phaseTwo <launchFile> or ./phaseTwo defaults" << endl;
 	cout << "Launch file should contain (With Default Values) \n\t-> NodeName\t\t:Node \n\t-> OutputFilename\t:node.yaml "
-		 << "\n\t-> InTimers\t\t:timers.log \n\t-> InSynchronizers\t:synchronizers.log \n\t-> InSubscribers\t:subscribers.log "
+		 << "\n\t-> InTimers\t\t:timers.log \n\t-> InSubscribers\t:subscribers.log "
 		 << "\n\t-> InPublishers\t\t:publishers.log \n\t-> InModel\t\t:model.log" << endl;
 	cout << "NOTE: defaults expect all the files to be in the same directory. Yaml-cpp throws an instance of BadFile if launch file is corrupted or doesn't exist." << endl << endl;
 }
@@ -70,113 +70,19 @@ void ParseInputs(string input)
 		NodeName = launch["NodeName"].as<string>();
 		OutputFilename = launch["OutputFilename"].as<string>();
 		InTimers = launch["InTimers"].as<string>();
-		InSynchronizers = launch["InSynchronizers"].as<string>();
+//		InSynchronizers = launch["InSynchronizers"].as<string>();
 		InSubscribers = launch["InSubscribers"].as<string>();
 		InPublishers = launch["InPublishers"].as<string>();
 		InModel = launch["InModel"].as<string>();
 	}
 }
 
-void DumpDebuggingInfo()
-{
-	vector <Function> model, original;
-	model = original = readModel(InModel);
-	updateModelTimers(InTimers, model);
-	bool isSubscriberAbsent = updateModelSubscribers(InSubscribers, model);
-	updateModelPublishers(InPublishers, model);
-	updateModelSynchronizers(InSynchronizers, model);
-
-	vector<PublishPath> paths = PhaseTwo(model);
-
-	//refine paths
-	for(PublishPath &path : paths)
-	{
-		path.refinePath();
-	}
-
-	//merge paths
-	map<string, PublishPath> uniquePublishers;
-	for (PublishPath &path : paths)
-	{
-		map<string, PublishPath>::iterator it = uniquePublishers.find(path.topic);
-		if(it != uniquePublishers.end())
-		{
-			it->second.mergeWithPath(path);
-		}
-		else
-		{
-			uniquePublishers[path.topic] = path;
-		}
-	}
-
-	/*
- * if there are no subs then make it independent
- */
-	if(isSubscriberAbsent)
-	{
-		for(auto &kv: uniquePublishers) {
-			kv.second.dependency = INDEPENDENT;
-			kv.second.timePattern = NO_SUBSCRIBER;
-		}
-	}
-
-	string in = "upaths";
-	while(in.compare("@exit"))
-	{
-		if (!in.compare("rpaths"))
-		{
-			for (PublishPath path: paths)
-			{
-				cout << "______________" << endl;
-				path.Dump();
-			}
-			cout << "________________________________" << endl;
-		}
-		else if(!in.compare("upaths"))
-		{
-
-			for (auto &kv: uniquePublishers)
-			{
-				cout << "______________" << endl;
-				kv.second.Dump();
-			}
-			cout << "________________________________" << endl;
-		}
-		else
-		{
-			cout << "Original Model" << endl;
-			for (Function fcn: model) {
-				if (!fcn.name.compare(in))
-				{
-					cout << "______________" << endl;
-					fcn.Dump();
-				}
-			}
-			cout << "________________________________" << endl;
-		}
-
-
-		//fflush(stdin);
-		cin.clear();
-		cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-		getchar();
-
-		//cout << "\n\033[2J\033[1;1H"; //clear screen
-		system("reset");
-		cout << "Function being tested -> ";
-		cin >> in;
-	}
-
-}
-
-
-
 int main(int argCount, char** argValues)
 {
-
 	if(argCount < 2)
 	{
 		help();
+		exit(EXIT_FAILURE);
 	}
 	else
 	{
@@ -188,21 +94,17 @@ int main(int argCount, char** argValues)
 	updateModelPublishers(InPublishers, model);
 	updateModelSynchronizers(InSynchronizers, model);
 	//writeModel(model);
-#ifdef DEBUG_MAIN
-	cout << "main:" << __LINE__ << endl;
-#endif
+
+	//build paths from the read model
 	vector<PublishPath> paths = PhaseTwo(model);
-#ifdef DEBUG_MAIN
-	cout << "main:" << __LINE__ << endl;
-#endif
+
 	//refine paths
 	for(PublishPath &path : paths)
 	{
 		path.refinePath();
 	}
-#ifdef DEBUG_MAIN
-	cout << "main:" << __LINE__ << endl;
-#endif
+
+
 	//merge paths
 	map<string, PublishPath> uniquePublishers;
 	for (PublishPath &path : paths)
@@ -231,15 +133,8 @@ int main(int argCount, char** argValues)
 
 	for(auto kv: uniquePublishers)
 		kv.second.dumpPublishPath(OutPathsFile);
-#ifdef DEBUG_MAIN
-	cout << "main:" << __LINE__ << endl;
-#endif
-	DumpNodeYaml(OutputFilename, NodeName, readSubscriber(InSubscribers), readPublisher(InPublishers), uniquePublishers);
-#ifdef DEBUG_MAIN
-	cout << "main:" << __LINE__ << endl;
-#endif
 
-	if(argCount > 2) DumpDebuggingInfo();
+	DumpNodeYaml(OutputFilename, NodeName, readSubscriber(InSubscribers), readPublisher(InPublishers), uniquePublishers);
 
 	return 1;
 }
