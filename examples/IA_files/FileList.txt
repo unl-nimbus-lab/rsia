@@ -1,5 +1,5 @@
-node_model/arm_planner.yaml
-node_model/arm_controller.yaml
-node_model/base_planner.yaml
-node_model/base_controller.yaml
-node_model/sensor.yaml
+system_ia_model/arm_planner.yaml
+system_ia_model/arm_controller.yaml
+system_ia_model/base_planner.yaml
+system_ia_model/base_controller.yaml
+system_ia_model/sensor.yaml
