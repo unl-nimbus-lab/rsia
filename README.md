@@ -5,7 +5,8 @@ Impact set generator for ROS based systems implemented in C++. Tool extracts and
 - Free software: MIT License
 
 ## Installation
-- **Dependencies** ([Install Guide](dep_install.bash)) 
+- **Dependencies** ([Install Guide](dep_install.md)) 
+	- **ROS** ([Install instructions](http://wiki.ros.org/kinetic/Installation/Ubuntu))
 	- **LLVM** (version 3.9.0, requires to be built from source code)[(link)](http://llvm.org/releases/download.html#3.9.0)
 	- **Clang** (version 3.9.0, requires to be built from source code)[(link)](http://llvm.org/releases/download.html#3.9.0)
 	- **Pugi-XML** [(link)](http://pugixml.org/)
