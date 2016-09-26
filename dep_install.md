@@ -109,9 +109,7 @@ Yaml-cpp can be installed in two ways:
 
 1. Through ubuntu repositories using
 
-```bash 
-sudo apt-get install libyaml-cpp-dev
-```
+        sudo apt-get install libyaml-cpp-dev
 
 2. Can be built through sources and installed. Check yaml-cpp's github repository for that. ([Click here](https://github.com/jbeder/yaml-cpp))
 
@@ -120,10 +118,9 @@ sudo apt-get install libyaml-cpp-dev
 pugi-xml can be installed in two ways:
 
 1. Through ubuntu repositories using
+ 
+        sudo apt-get install libpugixml-dev
 
-```bash 
-sudo apt-get install libpugixml-dev
-```
 2. Can be built through sources and installed. Check pugi-xml's homepage. ([Click here](https://http://pugixml.org/))
 
 ## Installing graphviz
