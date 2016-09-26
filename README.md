@@ -5,7 +5,7 @@ Impact set generator for ROS based systems implemented in C++. Tool extracts and
 - Free software: MIT License
 
 ## Installation
-- **Dependencies** <!-- [install script](install_dep.bash) -->
+- **Dependencies** ([Install Guide](dep_install.bash)) 
 	- **LLVM** (version 3.9.0, requires to be built from source code)[(link)](http://llvm.org/releases/download.html#3.9.0)
 	- **Clang** (version 3.9.0, requires to be built from source code)[(link)](http://llvm.org/releases/download.html#3.9.0)
 	- **Pugi-XML** [(link)](http://pugixml.org/)
@@ -34,7 +34,6 @@ Instructions on how to use *__RSIA__* on a sample system can be found [here](exa
 
 - Parsing of ROS based `.launch` files 
 - One click build of whole system
-
 
 ## Credits
 
