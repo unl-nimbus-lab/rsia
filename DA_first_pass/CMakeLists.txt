@@ -23,7 +23,6 @@ add_clang_library(clangAnalysis
   PseudoConstantAnalysis.cpp
   ReachableCode.cpp
   ReachableConditions.cpp
-  RosParamAnalysis.cpp
   RosPatterns.cpp
   ScanfFormatString.cpp
   ThreadSafety.cpp
@@ -36,5 +35,4 @@ add_clang_library(clangAnalysis
   clangAST
   clangBasic
   clangLex
-  yaml-cpp
   )

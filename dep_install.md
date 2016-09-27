@@ -107,6 +107,11 @@ InstalledDir: $llvm_base_dir/build_llvm/bin
 
 Yaml-cpp can be installed in two ways:
 
+you can verify if yaml-cpp is already installed using:
+```bash
+ ldconfig -p | grep yaml
+```
+
 1. Through ubuntu repositories using
 
         sudo apt-get install libyaml-cpp-dev
@@ -117,8 +122,13 @@ Yaml-cpp can be installed in two ways:
 
 pugi-xml can be installed in two ways:
 
+You can test if pugi-xml is already installed using
+```bash
+ ldconfig -p | grep pugi
+```
+
 1. Through ubuntu repositories using
- 
+
         sudo apt-get install libpugixml-dev
 
 2. Can be built through sources and installed. Check pugi-xml's homepage. ([Click here](https://http://pugixml.org/))
