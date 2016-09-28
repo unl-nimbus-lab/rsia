@@ -73,3 +73,7 @@ Once the above is done, recompile Clang to add the tool to Clang's static analyz
 ## Execution
 
 Execution of the tool is explained [here](../examples/README.md).
+
+## Advance Users
+
+If you are planning on modifying or developing on top of this tool, we recommend you to generate and look at doxygen documentation first. We have provided a doxygen configuration file with the source code. It will help understand the details of the system in a better manner than directly looking at the source code. Happy Coding!!!
