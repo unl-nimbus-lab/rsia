@@ -63,3 +63,6 @@ examples/sample_ros_workspace/build
 examples/sample_ros_workspace/.catkin_workspace
 examples/sample_ros_workspace/src/CMakeLists.txt
 
+#build directory
+DA_second_pass/build
+IA_tool/build

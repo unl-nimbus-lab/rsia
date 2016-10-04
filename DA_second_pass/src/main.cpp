@@ -92,7 +92,7 @@ int main(int argCount, char** argValues)
 	updateModelTimers(InTimers, model);
 	bool isSubscriberAbsent = updateModelSubscribers(InSubscribers, model);
 	updateModelPublishers(InPublishers, model);
-	updateModelSynchronizers(InSynchronizers, model);
+//	updateModelSynchronizers(InSynchronizers, model);
 	//writeModel(model);
 
 	//build paths from the read model
