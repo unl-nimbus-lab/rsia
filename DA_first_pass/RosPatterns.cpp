@@ -23,7 +23,6 @@
 #include <clang/Analysis/Analyses/Dominators.h>
 #include <clang/AST/Expr.h>
 #include <clang/AST/StmtVisitor.h>
-#include <yaml-cpp/yaml.h>
 #include <clang/Analysis/Analyses/CFGReachabilityAnalysis.h>
 
 using namespace clang;
