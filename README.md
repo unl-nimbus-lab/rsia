@@ -5,7 +5,8 @@ Impact set generator for ROS based systems implemented in C++. Tool extracts and
 - Free software: MIT License
 
 ## Demonstration
-<iframe width="560" height="315" src="https://www.youtube.com/embed/lkx_ptR8fL4" frameborder="0" allowfullscreen></iframe>
+
+[![Rate based Impact Analysis](.youtube.png)](https://youtu.be/lkx_ptR8fL4 "Rate based Impact Analysis")
 
 ## Installation
 - **Dependencies** ([Install Guide](dep_install.md)) 
