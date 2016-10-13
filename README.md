@@ -38,7 +38,7 @@ Instructions on how to use *__RSIA__* on a sample system can be found [here](exa
 #### Helper Tools
 
 - Parsing of ROS based `.launch` files 
-- One click build of whole system
+- Single command build and analysis of the whole system
 
 ## Credits
 
