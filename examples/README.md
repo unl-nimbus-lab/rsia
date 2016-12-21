@@ -17,7 +17,7 @@ Before going forward and looking at the impact analysis results, let's look at h
 
 ## RSIA: Execution example
 
-#### DA phase
+### DA phase
 
 **ROS requirement**: The workspace should be sourced. To source the sample workspace. Follow these steps:
 
@@ -84,7 +84,7 @@ Repeat this process for other components. Namely:
  
 We have also included already generated files for all these components under the folder IA_files. 
 
-#### IA phase
+### IA phase
  
 We will show the example for already added component dump example files in IA_files folder. You can follow the example with your generated component files.
 
